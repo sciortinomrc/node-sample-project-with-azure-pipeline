@@ -6,6 +6,14 @@
 trigger:
 - master
 
+resources:
+  repositories:
+  - repository: pipeline-tasks-template-for-node-sample-project
+    type: github
+    endpoint: 'GitHub connection 1'
+    name: MeterianHQ/pipeline-tasks-template-for-node-sample-project
+    ref: refs/heads/master
+
 pool:
   vmImage: ubuntu-latest
 
@@ -18,6 +26,7 @@ jobs:
 
   steps:
   - checkout: self
-  - template: template.yaml
+  - checkout: pipeline-tasks-template-for-node-sample-project
+  - template: template.yaml@pipeline-tasks-template-for-node-sample-project
     parameters:
       ProjectWorkingDirectory: $(Build.SourcesDirectory)/project/subfolder
