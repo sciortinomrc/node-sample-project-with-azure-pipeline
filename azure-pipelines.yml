@@ -11,7 +11,7 @@ resources:
   - repository: pipeline-tasks-template-for-node-sample-project
     type: github
     endpoint: 'GitHub connection 1'
-    name: MeterianHQ/pipeline-tasks-template-for-node-sample-project
+    name: sciortinomrc/pipeline-tasks-template-for-node-sample-project
     ref: refs/heads/master
 
 pool:
