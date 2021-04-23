@@ -6,13 +6,7 @@
 trigger:
 - master
 
-resources:
-  repositories:
-  - repository: pipeline-tasks-template-for-node-sample-project
-    type: github
-    endpoint: 'GitHub connection 1'
-    name: sciortinomrc/pipeline-tasks-template-for-node-sample-project
-    ref: refs/heads/master
+
 
 pool:
   vmImage: ubuntu-latest
@@ -26,7 +20,7 @@ jobs:
 
   steps:
   - checkout: self
-  - checkout: pipeline-tasks-template-for-node-sample-project
+  - checkout: git://sciortinomrc/pipeline-tasks-template-for-node-sample-project
   - template: template.yaml@pipeline-tasks-template-for-node-sample-project
     parameters:
       ProjectWorkingDirectory: $(Build.SourcesDirectory)/project/subfolder
