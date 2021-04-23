@@ -29,4 +29,4 @@ jobs:
   - checkout: pipeline-tasks-template-for-node-sample-project
   - template: template.yaml@pipeline-tasks-template-for-node-sample-project
     parameters:
-      ProjectWorkingDirectory: $(Build.SourcesDirectory)/project/subfolder
+      ProjectWorkingDirectory: $(Build.SourcesDirectory)/node-sample-project-with-azure-pipeline/project/subfolder
